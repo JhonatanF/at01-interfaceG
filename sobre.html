@@ -15,7 +15,8 @@
     </header>
     <main>
       <p>
-        Aqui fica o &nbsp;&nbsp;&nbsp;&nbsp;<strong>primeiro</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+        Aqui fica o
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>primeiro</strong>&nbsp;&nbsp;&nbsp;&nbsp;
         <abbr
           title="divisão de um texto escrito, indicada pela mudança de linha"
           >paragrafro</abbr
@@ -31,6 +32,44 @@
           <figcaption>Legenda para a imagem impressionante</figcaption>
         </figure>
       </div>
+
+      
+      <div class="form">
+        <form>
+        <div class="form-group">
+          <label for="usuario"> Usuário</label>
+          <input
+            type="text"
+            id="usuario"
+            placeholder="Usuário"
+            required
+            oninvalid="this.setCustomValidity('Preencha todos os campos')"
+          />
+          <label for="senha"> Senha</label>
+          <input
+            type="text"
+            id="senha"
+            placeholder="Senha"
+            name="senha"
+            required
+            oninvalid="this.setCustomValidity('Preencha todos os campos')"
+          />
+        </div>
+        <button onclick="functionAlert()">Entrar</button>
+      </form>
+      </div>
     </main>
+    <script>
+      function functionAlert() {
+        var user = document.getElementById("usuario").value;
+        var pass = document.getElementById("senha").value;
+
+       if (user === "" || user === null || pass === "" || pass === null) {
+         console.log("preencha todos os campos")
+      }else {
+        alert("Login para o " + user + " efetuado com sucesso!");
+      }
+      }
+    </script>
   </body>
 </html>
